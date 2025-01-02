@@ -7,5 +7,5 @@ trigger accesslevelchecklineitem on OpportunityLineItem (after insert) {
     
    List<product2> prolist=[select Id,Name,No_Of_Products_sold__c	 from product2 where Id=:proId]; 
     system.debug(prolist);
-    
+    //wow i have successfully connect my org with git and salesforce
 }
