@@ -1,0 +1,55 @@
+<aura:component controller="WrapperTest" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:handler  name="init" value="{!this}" action="{!c.Accountcontroller}" />
+    <aura:attribute name="check" type="Boolean" default="true"/>
+    <aura:attribute name="accountContactWrapper" type="object"/>
+        <aura:attribute name="ShowRecords" type="object"/>
+
+    <div class="size">
+        <table class="slds-table slds-table--bordered slds-table--striped">
+            <thead>
+                <tr>
+                    <th scope="col"><span class="slds-truncate">CheckBox </span></th>
+                    <th scope="col"><span class="slds-truncate"> Name</span></th>
+                    
+                    <th scope="col"><span class="slds-truncate"> Action</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.accountContactWrapper}" var="A" indexVar="index">
+                    <tr>
+                        <td> <ui:inputCheckbox aura:id="checkbox" label="{!A}" value="{!A.selected}" change="{!c.onCheck}"/></td>
+                        
+                        <td>{!A.acc.Name}</td>
+                        
+                        <td>{!A.selected}</td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="siz">
+        <table class="slds-table slds-table--bordered slds-table--striped">
+            <thead>
+                <tr>
+                    <th scope="col"><span class="slds-truncate"> Name</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.ShowRecords }" var="B" indexVar="index">
+                    <tr>
+                        
+                        <td>{!B.acc.Name}</td>
+                        
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+
+    
+    
+    
+    
+    
+</aura:component>

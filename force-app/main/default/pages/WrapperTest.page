@@ -1,0 +1,13 @@
+<apex:page controller="Wstd3">
+   <apex:form >
+        <apex:pageblock >
+            <apex:commandButton value="save" action="{!Create}"/>
+            <apex:pageblocksection Title="account">
+                <apex:inputfield value="{!bb.aa.acc.name}"></apex:inputfield>
+            </apex:pageblocksection>
+            <apex:pageblocksection Title="contact">
+                <apex:inputfield value="{!bb.con.lastname}"></apex:inputfield>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

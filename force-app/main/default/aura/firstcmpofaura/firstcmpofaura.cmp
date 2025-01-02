@@ -1,0 +1,85 @@
+<aura:component controller="Wstd2" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:handler name="init" value="{!this}"  action="{!c.init}"/>        
+    
+    <aura:attribute Name="accData" type="List"/>
+    
+    <h2 id="element-with-table-label" class="slds-text-heading_medium slds-m-bottom_xx-small">Example data table of Opportunities</h2>
+    <h3 id="other-element-with-table-label" class="slds-text-title slds-m-bottom_small">Using
+        <code>aria-labelledby</code>, instead of aria-label</h3>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Stage">Id</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Account Name">Account Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Close Date">Industry</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Close Date">Delete</div>
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody><aura:iteration items="{!v.accData}" var="item" indexVar="index">
+            <tr class="slds-hint-parent">
+                <th data-label="Opportunity Name" scope="row">
+                    <div class="slds-truncate" title="Cloudhub">
+                        <a href="#" tabindex="-1">{!index+1}</a>
+                    </div>
+                </th>
+                <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">{!item.Name}</div>
+                </td>
+                <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">{!item.Industry}</div>
+                </td>
+                <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">
+                        <a  onclick="{!c.remove}" data-record="{!item.Id}"  data-id="{!item.Name}">
+                             <lightning:icon iconName="action:delete" alternativeText="Delete" size="small" aura:id="abc" value="ravi" title="Delete" />
+
+                        </a>
+                    </div>
+                </td>
+                
+            </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</aura:component>
